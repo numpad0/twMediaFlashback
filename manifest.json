@@ -23,7 +23,7 @@
    "content_scripts": [
      {
         "matches": ["https://twitter.com/"],
-        "js": ["script.js", "options.js"],
+        "js": ["jquery-3.3.1.min.js","script.js", "options.js"],
         "run_at": "document_idle"
      }
    ]

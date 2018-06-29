@@ -11,7 +11,6 @@ function waitForAddedNode(params) {
         childList: true,
     });
 }
-Usage:
 
 waitForAddedNode({
     id: 'stream-item',
@@ -28,13 +27,8 @@ waitForAddedNode({
         if(mediaHeader == null){
 
         } else {
-          //console.log(tweetUrl);
-          //console.log(mediaUrl);
           chrome.runtime.sendMessage({method: 'setItem', key: tweetUrl, value: mediaUrl});
-
-
         }
-
       }
     }
 });

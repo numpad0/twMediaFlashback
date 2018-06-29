@@ -4,6 +4,7 @@ function clear_cache(){
   if(checked){
     localStorage.clear();
     document.getElementById("safety_check").checked = false;
+    location.reload();
     console.log("cleared cache");
   }
 }
@@ -13,7 +14,8 @@ function make_table(){
 
     var recordLength = localStorage.length;
     console.log(recordLength);
-    for(var i=recordLength; i > 0; i--){
+    
+    for(var i=0; i < recordLength; i++){
       var tweetUrl =  localStorage.key(i);
       var mediaUrl = localStorage.getItem(tweetUrl);
       cell = document.createElement('div');
