@@ -11,10 +11,11 @@ function clear_cache(){
 
 // 表の動的作成
 function make_table(){
-
+    var el = document.getElementById('gallery_parent');
+    while ( el.firstChild ) el.removeChild( el.firstChild );
     var recordLength = localStorage.length;
     console.log(recordLength);
-    
+
     for(var i=0; i < recordLength; i++){
       var tweetUrl =  localStorage.key(i);
       var mediaUrl = localStorage.getItem(tweetUrl);
