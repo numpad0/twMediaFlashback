@@ -10,6 +10,10 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
       sendResponse({data: JSON.parse(localStorage.getItem(request.key))});
       break;
     case 'setItem': // 指定されたkeyと値を保存（更新）
+      if(localStorage.length > 250){
+         localStorage.clear();
+         console.log("More than 250 stored items found. Cleared LocalStorage");
+      }
       sendResponse({data: localStorage.setItem(request.key, request.value)});
       console.log("setItem is called");
       break;

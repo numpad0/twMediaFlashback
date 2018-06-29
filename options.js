@@ -4,7 +4,6 @@ function clear_cache(){
   if(checked){
     localStorage.clear();
     document.getElementById("safety_check").checked = false;
-    location.reload();
     console.log("cleared cache");
   }
 }
