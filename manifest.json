@@ -1,13 +1,30 @@
 {
- "manifest_version": 2,
- "name": "twMediaFlashback",
- "description": "Stores URLs in Twitter home timeline",
- "version": "1.0",
- "content_scripts": [
- {
-    "matches": ["https://twitter.com/"],
-    "js": ["jquery-3.3.1.min.js","script.js"],
-    "run_at": "document_idle"
- }
- ]
+   "manifest_version": 2,
+   "name": "twMediaFlashback",
+   "description": "Stores URLs in Twitter home timeline",
+   "version": "1.0",
+
+   "permissions": [
+     "tabs",
+     "activeTab",
+     "contextMenus",
+     "storage"
+   ],
+   "options_page": "options.html",
+   "browser_action": {
+       "default_title": "Options"
+   },
+
+   "background": {
+     "scripts": ["background.js", "options.js"],
+     "persistent": false
+   },
+
+   "content_scripts": [
+     {
+        "matches": ["https://twitter.com/"],
+        "js": ["script.js", "options.js"],
+        "run_at": "document_idle"
+     }
+   ]
 }

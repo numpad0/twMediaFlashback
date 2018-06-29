@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head><title>Flashback Gallery</title>
+
+  <style>
+  div.gallery {
+      margin: 20px;
+      border: 1px solid #ccc;
+      float: left;
+      height: 320px;
+  }
+
+  div.gallery:hover {
+      border: 1px solid #777;
+  }
+
+  div.gallery img {
+      width: auto;
+      height: 100%;
+  }
+
+  div.desc {
+      padding: 5px;
+      text-align: center;
+  }
+  </style>
+
+
+</head>
+<body>
+
+<!--
+Favorite color:
+<select id="color">
+ <option value="red">red</option>
+ <option value="green">green</option>
+ <option value="blue">blue</option>
+ <option value="yellow">yellow</option>
+</select>
+-->
+
+<font size="4"><b>Flashback Gallery</b></font>
+
+<label>
+  <input type="checkbox" id="safety_check">
+  Check and hit button to clear
+</label>
+
+<button id="clear">Clear cache</button>
+
+<br>
+<br>
+
+
+<button id="load" style="width:260px; height:100px">Load saved Media URLs</button>
+
+<div id="status"></div>
+
+
+<div id="gallery_parent"></div>
+
+
+
+<script src="options.js"></script>
+</body>
+</html>

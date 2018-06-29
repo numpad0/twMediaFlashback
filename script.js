@@ -30,6 +30,8 @@ waitForAddedNode({
         } else {
           //console.log(tweetUrl);
           //console.log(mediaUrl);
+          chrome.runtime.sendMessage({method: 'setItem', key: tweetUrl, value: mediaUrl});
+
 
         }
 
