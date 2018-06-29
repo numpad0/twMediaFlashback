@@ -8,7 +8,6 @@ function clear_cache(){
   }
 }
 
-// 表の動的作成
 function make_table(){
     var el = document.getElementById('gallery_parent');
     while ( el.firstChild ) el.removeChild( el.firstChild );
@@ -31,16 +30,17 @@ function make_table(){
       img.setAttribute('src', mediaUrl);
       img.setAttribute('width', '640');
       img.setAttribute('height', '480');
+      img.setAttribute('alt', tweetUrl);
 
       desc.setAttribute('class', 'desc');
-      desc.innerHTML = tweetUrl;
+      desc.innerHTML = tweetUrl.match("^https:\/\/twitter\.com\/(.*)\/.*\/.*$")[1];
 
       link.appendChild(img);
       cell.appendChild(link);
       cell.appendChild(desc);
 
       document.getElementById("gallery_parent").appendChild(cell);
-      //console.log(tweetUrl, mediaUrl);
+      console.log(tweetUrl, mediaUrl);
       }
 }
 
