@@ -15,7 +15,6 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
          console.log("More than 250 stored items found. Cleared LocalStorage");
       }
       sendResponse({data: localStorage.setItem(request.key, request.value)});
-      console.log("setItem is called");
       break;
     case 'removeItem': // 指定されたkeyの値を削除
       sendResponse({data: localStorage.removeItem[request.key]});
